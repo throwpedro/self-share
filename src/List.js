@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 
 class List extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
-        let items = this.props.items || [];
-        let rows = items.map(
-            item => {
+        const users = this.props.users || [];
+        let rows = users.map(
+            user => {
                 return (
                     <tr>
-                        <td>{item.title}</td>
+                        <td>{user.title}</td>
                     </tr>
                 );
             }
         );
-
+        
         return (
             <table>
                 {rows}
